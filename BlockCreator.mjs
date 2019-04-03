@@ -28,9 +28,16 @@ class Block {
 }
 
 export const createBlocks = () => {
-    const blocks =
+    const blocks = []
     for (var i = 0; i < n; i++) {
         const block = new Block(i)
-
+        blocks.push(block)
     }
+    return blocks
+}
+
+export const startAnimation(blocks) {
+    blocks.forEach((block) => {
+        block.startAnimation()
+    })
 }
