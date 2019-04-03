@@ -3,18 +3,15 @@ const getCurrTime = () => {
 }
 
 class LoopObject {
-    constructor(cb, frequency) {
-        this.frequency = frequency
+    constructor(cb) {
         this.currTime = getCurrTime()
         this.cb = cb
         this.id = this.currTime
     }
 
     execute() {
-        const currTime = getCurrTime()
-        if (currTime - this.currTime >= this.frequency && this.cb) {
+        if (this.cb) {
             this.cb()
-            this.currTime = currTime
         }
     }
 }
