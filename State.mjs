@@ -1,4 +1,4 @@
-const scGap = 0.05
+const scGap = 0.01
 export default class State {
 
     constructor() {
@@ -6,7 +6,7 @@ export default class State {
     }
 
     update(cb) {
-        this.scale += 0.05 * this.dir
+        this.scale += scGap * this.dir
         if (Math.abs(this.scale - this.prevScale) > 1) {
             this.scale = this.prevScale + this.dir
             this.dir = 0

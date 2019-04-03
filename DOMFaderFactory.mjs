@@ -1,4 +1,4 @@
-import DOMFader from './DOMFader'
+import DOMFader from './DOMFader.mjs'
 
 export default class DOMFaderFactory {
     static create(div, fadein) {

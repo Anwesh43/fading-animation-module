@@ -1,4 +1,4 @@
-import {loop} from './Loop'
+import {loop} from './Loop.mjs'
 export default class Animator {
     start(cb) {
         if (!this.animated) {

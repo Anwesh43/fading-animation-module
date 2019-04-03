@@ -1,4 +1,4 @@
-import DOMFaderFactory from './DOMFaderFactory'
+import DOMFaderFactory from './DOMFaderFactory.mjs'
 
 const w = window.innerWidth
 const h = window.innerHeight
@@ -15,15 +15,16 @@ class Block {
         this.div = document.createElement('div')
         this.div.style.width = size
         this.div.style.height = size
+        this.div.style.background = 'green'
         this.div.style.position = 'absolute'
         this.div.style.left = 0
         this.div.style.top = this.i * size + size / 10
         document.body.appendChild(this.div)
-        this.div.style.opacity = this.i % 2
+        this.div.style.opacity = 0
     }
 
     startAnimation() {
-        DOMFaderFactory.create(this.div, (this.i % 2) == 0)
+        DOMFaderFactory.create(this.div, true)
     }
 }
 
@@ -36,7 +37,7 @@ export const createBlocks = () => {
     return blocks
 }
 
-export const startAnimation(blocks) {
+export const startAnimation = (blocks) => {
     blocks.forEach((block) => {
         block.startAnimation()
     })

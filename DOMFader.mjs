@@ -1,5 +1,5 @@
-import Animator from './Animator'
-import State from './State'
+import Animator from './Animator.mjs'
+import State from './State.mjs'
 export default class DOMFader {
     constructor(node, fadein) {
         this.node = node
@@ -7,7 +7,7 @@ export default class DOMFader {
         this.state = new State()
         this.sop = 0
         this.dop = 1
-        if (this.fadein) {
+        if (!fadein) {
             this.sop = 1
             this.dop = 0
         }
